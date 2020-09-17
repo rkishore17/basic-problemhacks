@@ -47,6 +47,6 @@ public class subArray {
 		int array[] = {3, 4, 7, 2, -3, 1, 4, 2, 1};
 		int len = array.length;
 		int given = 9;
-		findSubArray(array, given, len);
+		findSubArray(array, given, length);
 	}
 }

@@ -1,7 +1,7 @@
 package solutions;
 
 //Problem: Finding the subArray for the given sum
-// Sorting by Single Traversal
+// Sorting by Single Traversing
 
 /*
 Example: 

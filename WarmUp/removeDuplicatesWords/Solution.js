@@ -6,7 +6,7 @@ Input: "A long lived wolf, lived in himalayas"
 Output: "A long lived wolf, in himalayas"
 */
 
-//Here, we can remove by characters by removing the split method.
+//Here, we can remove by characters wise, by removing the split method and converting string to charArr.
 
 function removeDuplicates(sentence) {
   let strArr = sentence.split(" ");

@@ -22,7 +22,7 @@ public class PalindromeSubString {
 	        	if (isPalindrome(str.substring(i, j))) {
 	        		set.add(str.substring(i,j));
 	        	}
-	          }
+	        }
 	    }
 	    
 	    return set;

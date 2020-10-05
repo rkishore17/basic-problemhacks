@@ -45,7 +45,7 @@ public class PalindromeSubString {
 		Set<String> result = palindromeString(str.toLowerCase());
 		
 //		String longestString = "";
-//		for(String s : s1)
+//		for(String s : result)
 //		{
 //			if(s.length() > longestString.length())
 //			{

@@ -29,14 +29,14 @@ public class subArray {
 				System.out.println("SubArray found at: " + i + " position");
 			}
 						
-			if(i < len) {
-				sum += inputArray[i];
-			}
-			
 			if(sum == inputNumber)
 			{
-				int idx = i+1;
+				int idx = i;
 				System.out.println("SubArray found at: " + startIdx + " and " + idx + " position");
+			}
+			
+			if(i < len) {
+				sum += inputArray[i];
 			}
 		}
 		return 1;
@@ -47,6 +47,6 @@ public class subArray {
 		int array[] = {3, 4, 7, 2, -3, 1, 4, 2, 1};
 		int len = array.length;
 		int given = 9;
-		findSubArray(array, given, length);
+		findSubArray(array, given, len);
 	}
 }

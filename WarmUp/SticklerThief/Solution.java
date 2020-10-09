@@ -8,7 +8,7 @@ Example:
 Input : int[] arr = {5, 5, 10, 100, 10, 5};
 Output : 110
 
-Input : int[] arr = {1, 2, 3};
+Input : int[] arr = {1, 3, 1};
 Output : 4
 */ 
 
@@ -25,17 +25,14 @@ public class Solution {
 			
 		case 2:
 			return Math.max(arrayItem[0], arrayItem[1]);
-			
-		case 3:
-			return arrayItem[0] + Math.max(arrayItem[1], arrayItem[2]);
 		}
 		
 		int inclusive = Math.max(arrayItem[0], arrayItem[1]);
-		int exclusive = 0;
+		int exclusive = arrayItem[0];
 		
 		for(int i=2; i<arrayItem.length; i++)
 		{
-			int maxValue = Math.max(arrayItem[i], arrayItem[i] + exclusive);
+			int maxValue = Math.max(inclusive, arrayItem[i] + exclusive);
 			
 			exclusive = inclusive;
 			inclusive = maxValue;

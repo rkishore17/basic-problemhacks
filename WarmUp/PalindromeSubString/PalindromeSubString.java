@@ -13,45 +13,44 @@ import java.util.Set;
 
 public class PalindromeSubString {  
 	
-	public static Set<String> palindromeString(String str)
-	{		
-		Set<String> set = new HashSet<>();
+	public String longestPalindrome(String str) {
+        String longestString = "";
 		
+		if(str.length() == 0) {
+			return longestString;
+        } else if(str.length() == 1) {
+            return str;
+        }
+        
 	    for (int i = 0; i < str.length(); i++) {
 	        for (int j = i + 1; j <= str.length(); j++) {
-	        	if (isPalindrome(str.substring(i, j))) {
-	        		set.add(str.substring(i,j));
+                String subStrValue = str.substring(i,j);   	
+	        	if (isPalindrome(subStrValue)) {
+	        		if(subStrValue.length() > longestString.length())
+                    {
+                        longestString = subStrValue;
+                    }
 	        	}
 	        }
 	    }
-	    
-	    return set;
-	}
-	
-	public static boolean isPalindrome(String s)
-	{
+        return longestString;
+    }
+    
+    public static boolean isPalindrome(String s) {
 		StringBuilder sb = new StringBuilder(s).reverse();
-		if(sb.length() > 1)
+		if(sb.toString().equals(s))
 		{
-			return (sb.toString().equals(s));			
+			return true;
 		}
 		return false;
 	}
-	
-	public static void main(String[] args) 
-	{
-		String str = "helloJava";
+    
+    public static void main(String[] args) 
+	{		
+		String str = "yzwhuvljgkbxonhkpnxldwkaiboqoflbotqamsxyglfqniflcrtsxbsxlwmxowwnnxychyrjedlijejqzsgwakzohghpxgamecmhcalfoyjtutxeciwqupwlxrgdcpfvybskrytvmwkvnbdjitmohjavhmjobudvbsnkvszyrahpanocltwzeubgxkkthxhjgvcvygfkjctkubtjdocncmjzmxujetybdwmqutvrrulhlsbcbripctbkacwoutkrqsohiihiegqqlasykkgjjskgphieofsjlkkmvwcltgjqbpakercxypfcqqsmkowmgjglbzbidapmqoitpzwhupliynjynsdfncaosrfegquetyfhfqohxytqhjxxpskpwxegmnnppnnmgexwpkspxxjhqtyxhoqfhfyteuqgefrsoacnfdsnyjnyilpuhwzptioqmpadibzblgjgmwokmsqqcfpyxcrekapbqjgtlcwvmkkljsfoeihpgksjjgkkysalqqgeihiihosqrktuowcakbtcpirbcbslhlurrvtuqmwdbytejuxmzjmcncodjtbuktcjkfgyvcvgjhxhtkkxgbuezwtlconapharyzsvknsbvdubojmhvajhomtijdbnvkwmvtyrksbyvfpcdgrxlwpuqwicextutjyoflachmcemagxphghozkawgszqjejildejryhcyxnnwwoxmwlxsbxstrclfinqflgyxsmaqtoblfoqobiakwdlxnpkhnoxbkgjlvuhwzy";
 		
-		Set<String> result = palindromeString(str.toLowerCase());
-		
-//		String longestString = "";
-//		for(String s : result)
-//		{
-//			if(s.length() > longestString.length())
-//			{
-//				longestString = s;
-//			}
-//		}
-		System.out.println(result);
+        Solution solution = new Solution();
+		String resp = solution.longestPalindrome(str);
+		System.out.println(resp);
 	}
 }

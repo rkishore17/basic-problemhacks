@@ -33,10 +33,12 @@ public class Solution {
 			String romanSymbolResp = "";
 			String padZeros = "";
 			
-			int count = len-1-i;
-			if(count != 0)
+			int units = len-1-i;
+			
+			//units is used to ensure whether the number is tens,hundred or thousand
+			if(units != 0)
 			{
-				padZeros = String.format("%0"+ count +"d", 0);
+				padZeros = String.format("%0"+ units +"d", 0);
 			}
 			
 			int number = Integer.parseInt(digits[i] + padZeros);

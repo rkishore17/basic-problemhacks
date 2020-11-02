@@ -33,11 +33,7 @@ public class Solution {
 		finalList.addAll(evenList);
 		finalList.addAll(oddList);
 		
-		Integer[] sortedArr = new Integer[finalList.size()];
-		sortedArr = finalList.toArray(sortedArr);
-		
-		for(Integer i : sortedArr)
-			System.out.print(i + " ");
+		finalList.stream().forEach(el -> System.out.print(el + " "));
 	}
 	
 	public static void main(String[] args) 

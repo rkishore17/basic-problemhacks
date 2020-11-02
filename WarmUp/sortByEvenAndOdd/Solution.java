@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class sortByEvenAndOdd {
+public class Solution {
 	
-	public static void minSum(int[] arr)
+	public static void sortByEvenAndOdd(int[] arr)
 	{
 		Arrays.sort(arr);
 		

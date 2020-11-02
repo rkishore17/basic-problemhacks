@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class sortByEvenAndOdd {
+public class Solution {
 	
-	public static void minSum(int[] arr)
+	public static void sortByEvenAndOdd(int[] arr)
 	{
 		Arrays.sort(arr);
 		
@@ -33,11 +33,7 @@ public class sortByEvenAndOdd {
 		finalList.addAll(evenList);
 		finalList.addAll(oddList);
 		
-		Integer[] sortedArr = new Integer[finalList.size()];
-		sortedArr = finalList.toArray(sortedArr);
-		
-		for(Integer i : sortedArr)
-			System.out.print(i + " ");
+		finalList.stream().forEach(el -> System.out.print(el + " "));
 	}
 	
 	public static void main(String[] args) 

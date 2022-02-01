@@ -17,25 +17,13 @@ Output :
 */ 
 
 function mergeDuplicates(inputArrItem) {
-  let uniqueArrObject = [];
-  
-  let duplicateArrValue = inputArrItem.filter((val, idx, arrItem) => {
+  const duplicateArrValue = inputArrItem.filter((val, idx, arrItem) => {
     let itemIdx = arrItem.findIndex((el) => el.id === val.id);
-    if (idx === itemIdx) {
-      uniqueArrObject.push(arrItem[itemIdx]);
+    if (idx !== itemIdx) {
+      arrItem[itemIdx].items.push(...arrItem[idx].items);
     }
-    return idx !== itemIdx;
+    return idx === itemIdx;
   });
-
-  for (let i = 0; i < uniqueArrObject.length; i++) {
-    for (let j = 0; j < duplicateArrValue.length; j++) {
-      if (uniqueArrObject[i].id === duplicateArrValue[j].id) {
-        uniqueArrObject[i].items.push(...duplicateArrValue[j].items);
-      }
-    }
-  }
-
-  console.log(uniqueArrObject);
 }
 
 const arr = [
